@@ -6,7 +6,7 @@ title: URL Validator
 version: 2.0.0
 
 # A brief description of the package (rdoc formatting supported)
-description: | Example for real time validation.
+description: | Example of real time URL validation.
 
 
 # A flag (when false) prevents the plugin from automatically reload when changed.

@@ -1,3 +1,16 @@
+#--
+##   Copyright 2010 Riassence Inc.
+ #   http://riassence.com/
+ #
+ #   You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
+ #   along with this software package. If not, contact licensing@riassence.com
+ ##
+ #++
+ 
+# = URL Validator
+# This plugin demonstrates real time URL validation with 
+# 
+
 class URLValidator < GUIPlugin
 require 'resolv'
 require 'uri'

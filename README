@@ -1,0 +1,13 @@
+Simple demonstration of real time URL validation.
+
+Dependencies:
+RSence 2.0 or higher (http://github.com/rsence/rsence)
+
+Usage:
+Drop into the project plugin directory.
+
+Licence:
+LGPL v3
+
+More information: 
+http://github.com/rsence/rsence
