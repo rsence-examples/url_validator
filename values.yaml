@@ -1,0 +1,7 @@
+:url:
+  :value: ""
+  :responders:
+    - :method: domain_valid?
+:valid_state:
+  :value: false
+  

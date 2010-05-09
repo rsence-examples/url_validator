@@ -1,0 +1,32 @@
+type: GUITree
+version: 0.4
+dependencies:
+- default_theme
+- controls
+class: HApplication
+extend:
+  # Extend the constructor to receive the options defined.
+  constructor: |
+    function( options ){
+      this.base( options.priority, options.label );
+    }
+# The options are passed on to the constructor of the class, see above.
+options:
+  # A small priority number makes the onIdle calls more frequent,
+  # a large priority number makes the onIdle colls less frequent.
+  priority: 20
+  label: URL Validator
+subviews:
+  - class: HStringView
+    rect: [300, 2, 350, 15]
+    options:
+      value: "Check URL validity:"
+  - class: HTextControl
+    rect: [0, 20, 700, 25]
+    options:
+      valueObjId: :values.url
+      refreshOnInput: false
+  - class: HValidatorView
+    rect: [710, 20, 21, 21]
+    options:
+      valueObjId: :values.valid_state
