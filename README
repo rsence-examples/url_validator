@@ -4,7 +4,11 @@ Dependencies:
 RSence 2.0 or higher (http://github.com/rsence/rsence)
 
 Usage:
-Drop into the project plugin directory and fire it up!
+Drop into the project plugin directory and fire it up! 
+For example:
+- rsence initenv myproject
+- drop the url_validator folder and its contents into myproject/plugins
+- rsence run -drf
 
 Licence:
 LGPL v3

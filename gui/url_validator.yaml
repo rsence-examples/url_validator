@@ -15,7 +15,7 @@ options:
   # A small priority number makes the onIdle calls more frequent,
   # a large priority number makes the onIdle colls less frequent.
   priority: 20
-  label: URL Validator
+  label: URL Validator # A short description or a name of the application. Visible in task managers and such.
 subviews:
   - class: HStringView
     rect: [300, 2, 350, 15]

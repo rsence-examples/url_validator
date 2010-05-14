@@ -27,7 +27,7 @@ require 'net/http'
   
 
   def domain_valid?( msg, url_string )
-    puts "checking domain validity... #{url_string.data}"
+    puts "checking domain validity... #{url_string.data}" # 
     set_error( msg, "")
     begin
       domain = URI.parse(url_string.data).host
@@ -36,7 +36,6 @@ require 'net/http'
       set_error( msg, err)
       return true
     end
-    puts "URI formed: #{domain.inspect}"
     if domain == nil
       set_state( msg, false )
       return true
