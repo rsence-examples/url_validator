@@ -8,7 +8,7 @@
  #++
  
 # = URL Validator
-# This plugin demonstrates real time URL validation with 
+# This plugin demonstrates real time URL validation of URLs given by client.
 # 
 
 class URLValidator < GUIPlugin
@@ -18,7 +18,6 @@ require 'net/http'
   
   def open
     super
-    puts "opened!"
     begin
       @dns = Resolv::DNS.new
     rescue
@@ -29,20 +28,18 @@ require 'net/http'
 
   def domain_valid?( msg, url_string )
     puts "checking domain validity... #{url_string.data}"
+    set_error( msg, "")
     begin
       domain = URI.parse(url_string.data).host
-    rescue
-      puts "shazbot! something funky happened.."
+    rescue StandardError => err
       set_state( msg, false )
+      set_error( msg, err)
       return true
     end
-    puts "URI formed"
+    puts "URI formed: #{domain.inspect}"
     if domain == nil
       set_state( msg, false )
       return true
-    end
-    if (domain[0..3] == "www.") 
-      domain = domain[4..domain.length] 
     end
     set_state( msg, @dns.getresources(domain, Resolv::DNS::Resource::IN::A).size > 0 )
   return true
@@ -52,4 +49,10 @@ require 'net/http'
     ses = get_ses( msg )
     ses[:valid_state].set( msg, state )
   end
+  
+  def set_error( msg, message )
+    ses = get_ses( msg )
+    ses[:error_message].set( msg, message)
+  end
+  
 end

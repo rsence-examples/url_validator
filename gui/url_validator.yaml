@@ -25,8 +25,12 @@ subviews:
     rect: [0, 20, 700, 25]
     options:
       valueObjId: :values.url
-      refreshOnInput: false
+      refreshOnInput: true
   - class: HValidatorView
     rect: [710, 20, 21, 21]
     options:
       valueObjId: :values.valid_state
+  - class: HStringView
+    rect: [0, 60, 700, 200]
+    options:
+      valueObjId: :values.error_message

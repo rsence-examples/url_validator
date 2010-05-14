@@ -1,7 +1,11 @@
+# :url: is the name for value
+# :value denotes the initial value
+# :responders: will be fired on the server side when the value changes
 :url:
-  :value: ""
+  :value: "http://"
   :responders:
     - :method: domain_valid?
 :valid_state:
   :value: false
-  
+:error_message:
+  :value: ""
