@@ -1,5 +1,6 @@
 type: GUITree
-version: 0.4
+version: 0.6
+# Default dependencies
 dependencies:
 - default_theme
 - controls
@@ -13,7 +14,7 @@ extend:
 # The options are passed on to the constructor of the class, see above.
 options:
   # A small priority number makes the onIdle calls more frequent,
-  # a large priority number makes the onIdle colls less frequent.
+  # A large priority number makes the onIdle colls less frequent.
   priority: 20
   label: URL Validator # A short description or a name of the application. Visible in task managers and such.
 subviews:
@@ -23,14 +24,11 @@ subviews:
       value: "Check URL validity:"
   - class: HTextControl
     rect: [0, 20, 700, 25]
-    options:
-      valueObjId: :values.url
-      refreshOnInput: true
+    # Dynamically bound from values.yaml
+    bind: :values.url
   - class: HValidatorView
     rect: [710, 20, 21, 21]
-    options:
-      valueObjId: :values.valid_state
+    bind: :values.valid_state
   - class: HStringView
     rect: [0, 60, 700, 200]
-    options:
-      valueObjId: :values.error_message
+    bind: :values.error_message
