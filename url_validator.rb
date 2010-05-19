@@ -23,8 +23,9 @@ require 'net/http'
     super
     begin
       @dns = Resolv::DNS.new
+      @in_a = Resolv::DNS::Resource::IN::A
     rescue
-      puts "#{e.inspect}"
+      puts e.inspect
     end
   end
   
@@ -47,8 +48,8 @@ require 'net/http'
       set_state( msg, false )
       return true
     end
-    set_state( msg, @dns.getresources(domain, Resolv::DNS::Resource::IN::A).size > 0 )
-  return true
+    set_state( msg, @dns.getresources(domain, @in_a).size > 0 )
+    return true
   end
   
   # A helper function to set validator state.

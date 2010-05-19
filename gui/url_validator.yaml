@@ -4,19 +4,13 @@ version: 0.6
 dependencies:
 - default_theme
 - controls
-class: HApplication
-extend:
-  # Extend the constructor to receive the options defined.
-  constructor: |
-    function( options ){
-      this.base( options.priority, options.label );
-    }
-# The options are passed on to the constructor of the class, see above.
+class: RSence.GUIApp
 options:
   # A small priority number makes the onIdle calls more frequent,
   # A large priority number makes the onIdle colls less frequent.
   priority: 20
-  label: URL Validator # A short description or a name of the application. Visible in task managers and such.
+  # A short description or a name of the application. Visible in task managers and such.
+  label: URL Validator 
 subviews:
   - class: HStringView
     rect: [300, 2, 350, 15]

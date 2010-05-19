@@ -3,13 +3,10 @@
 title: URL Validator
 
 # The human-readable version of the package
-version: 2.0.0
+version: 1.0.1
 
 # A brief description of the package (rdoc formatting supported)
 description: | Example of real time URL validation.
-
-# A flag (when false) prevents the plugin from automatically reload when changed.
-reloadable: true
 
 # System version requirement.
 sys_version: '>= 2.0.0'

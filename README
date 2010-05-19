@@ -8,7 +8,7 @@ Drop into the project plugin directory and fire it up!
 For example:
 - rsence initenv myproject
 - drop the url_validator folder and its contents into myproject/plugins
-- rsence run -drf
+- rsence run -f myproject
 
 Licence:
 LGPL v3
