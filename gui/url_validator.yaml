@@ -26,3 +26,5 @@ subviews:
   - class: HStringView
     rect: [0, 60, 700, 200]
     bind: :values.error_message
+
+
